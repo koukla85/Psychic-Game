@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>Psychic Game 2</title>
+</head>
+<body>
+
+  <div id= "container">
+    <div id="main header"> 
+    <img src= "file:///Users/yakirabaruch/Desktop/Bootcamp/Homework/Main/assets/images/636201283206317515-64409597_PSYCHIC-facebook.jpg" alt= "Psychic hands" style="width:924spx;height:315px;">
+
+    </div>
+    <div id="game">
+      <h1>The Psychic Game</h1>
+      <h3>What Letter Am I Thinking</h3>
+      <li>Wins: <span id="wins">0</span></li>
+      <li>Losses: <span id="losses">0</span></li>
+      <li>Guesses: <span id="ties">0</span></li>
+      <li>Guesses Left: <span id="guesses left">0</span></li>
+      <li>Guesses So Far: <span id="guesses so far">0</span></li>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+      // Creates an array that lists out all of the options (The Letters of the Alphabet).
+      var options = ["a", "b", "c", "d","e", "f","g","h","i","j","k","l","m","n","o","p","q","r","t","u","v","w","x","y","z"];
+      var wins = document.getElementById("wins"); 
+      var losses = document.getElementById("losses");
+      var guesses left = document.getElementById("guesses left")
+      var guesses so far = document.getElementById("guesses so far");
+      var winsCount = 0;
+      var lossesCount = 0;
+      var tiesCount = 0;
+
+      // This function is run whenever the user presses a key.
+      document.onkeyup = function(event) {
+
+        // Determines which key was pressed
+        var userGuess = event.key;
+
+        // Alerts the key the user pressed (userGuess).
+        // alert(userGuess);
+
+        // Randomly chooses a choice from the options array. This is the Computer's guess.
+        var computerGuess = options[Math.floor(Math.random() * options.length)];
+
+        // Alerts the Computer's guess.
+        // alert(computerGuess);
+
+        if(userGuess === "a") {
+          if(computerGuess === "d") {
+            lossesCount = lossesCount + 1;
+            losses.textContent = lossesCount;
+          }
+          else {
+            if (computerGuess === "t") {
+              winsCount = winsCount + 1;
+              wins.textContent = winsCount;
+            }
+          }
+        }
+
+        if(userGuess === "k") {
+          if(computerGuess === "e") {
+            lossesCount = lossesCount + 1;
+            losses.textContent = lossesCount;
+          }
+          else {
+            if (computerGuess === "b") {
+              winsCount = winsCount + 1;
+              wins.textContent = winsCount;
+            }
+          }
+        }
+
+        if(userGuess === "l") {
+          if(computerGuess === "f") {
+            lossesCount = lossesCount + 1;
+            losses.textContent = lossesCount;
+          }
+          else {
+            if (computerGuess === "o") {
+              winsCount = winsCount + 1;
+              wins.textContent = winsCount;
+            }
+          }
+        }
+        if(userGuess === "m") {
+          if(computerGuess === "p") {
+            lossesCount = lossesCount + 1;
+            losses.textContent = lossesCount;
+          }
+          else {
+            if (computerGuess === "j") {
+              winsCount = winsCount + 1;
+              wins.textContent = winsCount;
+            }
+          }
+        }
+
+
+        if (userGuess === computerGuess) {
+          tiesCount = tiesCount + 1;
+          ties.textContent = tiesCount;
+        }
+
+        
+
+      };
+
+      
+    </script>
+
+  </body>
+  </html>
